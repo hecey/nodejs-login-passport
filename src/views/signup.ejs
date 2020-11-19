@@ -1,11 +1,26 @@
-<% if (signupMessage) {%>
-    <div><%= signupMessage %></div>
-<% } %>
-<form action="/signup" method="POST">
-    <input type="email" name="email" placeholder="Insert Email">
-    <input type="password" name="password" placeholder="Insert password">
+<%- layout('layouts/main.ejs')%>
 
-    <button type="submit">
-        Signup
-    </button>
-</form>
+<div class="col-md-4 offset-md-4">
+    <div class="card mt-4 text-center">
+      
+            <div class="card-header">
+                <h3>Sign Up</h3>
+            </div>
+            <div class="card-body">
+            <form action="/signup" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="email" name="email" placeholder="Insert Email">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password" placeholder="Insert password">    
+                </div>
+                
+                
+    
+                <button type="submit" class="btn btn-primary btn-block mt-4">
+                    Signup
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -11,7 +11,8 @@ userSchema.methods.encryptPassport = (password) => {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 };
 
-userSchema.methods.comparePassport = function (password) {
+userSchema.methods.comparePassword = function (password) {
     return bcrypt.compareSync(password, this.password)
 };
+
 module.exports=mongoose.model('users',userSchema);

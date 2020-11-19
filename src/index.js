@@ -34,7 +34,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use((req, res, next)=>{
-    app.locals.signupMessage = req.flash('signupMessage');
+    app.locals.signMessage = req.flash('signMessage');
+    app.locals.user = req.user;
     next();
 });
 //routes
